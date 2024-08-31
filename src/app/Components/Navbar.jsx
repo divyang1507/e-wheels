@@ -1,43 +1,56 @@
-import React from 'react';
-import Link from 'next/link';
-import { FaRegUser, FaSearch } from "react-icons/fa";
-import { FiShoppingCart } from "react-icons/fi";
-import { IoMdSearch } from "react-icons/io";
+import React from "react";
+import Link from "next/link";
+import {
+  FiSearch,
+  FiShoppingCart,
+  FiUser,
+  FiAlignJustify,
+} from "react-icons/fi";
 const Navbar = () => {
   return (
-    <nav className="relative flex lg:px-20 px-4 py-4 bg-slate-900 text-white items-center justify-between">
-      <Link href='/'>
-      <div className='logo'>
-        e-Wheels 
-      </div>
+    <nav className="flex lg:px-20 px-4 py-6 bg-dark text-white items-center justify-between z-20">
+      <Link className="z-20" href="/">
+        <div className="logo text-primary text-3xl">e-Wheels</div>
       </Link>
-        <ul className="hidden lg:flex items-center justify-between gap-8">
-        <li>Home</li>
-        <li>Models</li>
-        <li>Stores</li>
-        <li>Services</li>
-        </ul>
-        <ul className="hidden lg:flex items-center justify-between gap-8">
-        <li><IoMdSearch/></li>
-        <li><FiShoppingCart/></li>
-        <li><FaRegUser/></li>
-        </ul>
+      <div className="hidden lg:flex items-center justify-between gap-8 text-xl">
+        <Link href={"/"}>Home</Link>
+        <Link href={"/"}>Models</Link>
+        <Link href={"/"}>Stores</Link>
+        <Link href={"/"}>Services</Link>
+      </div>
+      <div className="hidden lg:flex items-center justify-between gap-8 text-xl">
+        <Link href={"/"}>
+          <FiSearch />
+        </Link>
+        <Link href={"/"}>
+          <FiShoppingCart />
+        </Link>
+        <Link href={"/"}>
+          <FiUser />
+        </Link>
+      </div>
+      <div className="lg:hidden relative flex items-center justify-center text-2xl z-20">
+        <FiAlignJustify />
+      </div>
+      <div className="flex flex-col text-xl bg-dark lg:hidden justify-center left-0 items-center gap-10  z-10 absolute top-0 h-screen w-screen  ">
 
-      <div className="text-black flex lg:hidden justify-center left-0 items-center flex-col absolute top-0 h-screen w-screen bg-slate-900 z-10">
-        <div className=" text-black flex flex-col items-center justify-between gap-8">
-        <Link href={'/'}>Home</Link>
-        <Link href={'/'}>Models</Link>
-        <Link href={'/'}>Stores</Link>
-        <Link href={'/'}>Services</Link>
+          <Link className="text-white" href={"/"}>Home</Link>
+          <Link className="text-white" href={"/"}>Models</Link>
+          <Link className="text-white" href={"/"}>Stores</Link>
+  
+        <div className=" text-white  flex lg:hidden  items-center justify-between gap-8">
+          <Link href={"/"}>
+            <FiSearch />
+          </Link>
+          <Link href={"/"}>
+            <FiShoppingCart />
+          </Link>
+          <Link href={"/"}>
+            <FiUser />
+          </Link>
         </div>
-        <ul className=" text-black flex items-center justify-between gap-8">
-        <li><IoMdSearch/></li>
-        <li><FiShoppingCart/></li>
-        <li><FaRegUser/></li>
-        </ul>
-
       </div>
     </nav>
-  )
-}
-export default Navbar; 
+  );
+};
+export default Navbar;
